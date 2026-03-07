@@ -16,7 +16,7 @@ CREATE TABLE invoices (
   tax_rate NUMERIC DEFAULT 0,
   tax_amount NUMERIC DEFAULT 0,
   total NUMERIC NOT NULL,
-  currency TEXT DEFAULT 'EUR',
+  currency TEXT DEFAULT 'USD',
   status TEXT DEFAULT 'draft' CHECK (status IN ('draft', 'sent', 'paid')),
   pdf_url TEXT,
   due_date DATE,

@@ -7,7 +7,7 @@ CREATE TABLE orders (
     'manufactured', 'packed', 'invoiced', 'paid', 'cancelled'
   )),
   total_amount NUMERIC,
-  currency TEXT DEFAULT 'EUR',
+  currency TEXT DEFAULT 'USD',
   notes TEXT,
   created_at TIMESTAMPTZ DEFAULT now(),
   updated_at TIMESTAMPTZ DEFAULT now()

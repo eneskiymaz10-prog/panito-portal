@@ -114,7 +114,7 @@ export function SalesCharts({
                   formatter={(value) => [
                     new Intl.NumberFormat("en-US", {
                       style: "currency",
-                      currency: "EUR",
+                      currency: "USD",
                     }).format(value as number),
                     "Revenue",
                   ]}
@@ -222,7 +222,7 @@ export function SalesCharts({
                     formatter={(value) => [
                       new Intl.NumberFormat("en-US", {
                         style: "currency",
-                        currency: "EUR",
+                        currency: "USD",
                       }).format(value as number),
                       "Revenue",
                     ]}

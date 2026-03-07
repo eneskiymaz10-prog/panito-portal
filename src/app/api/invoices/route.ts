@@ -25,7 +25,7 @@ export async function POST(request: Request) {
       tax_rate: body.tax_rate || 0,
       tax_amount: body.tax_amount || 0,
       total: body.total,
-      currency: body.currency || "EUR",
+      currency: body.currency || "USD",
       due_date: body.due_date || null,
     })
     .select()

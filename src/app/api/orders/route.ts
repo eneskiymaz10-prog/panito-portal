@@ -76,7 +76,7 @@ export async function POST(request: Request) {
       customer_id: user.id,
       status: "submitted",
       total_amount: totalAmount,
-      currency: prices?.[0]?.currency || "EUR",
+      currency: prices?.[0]?.currency || "USD",
       notes: parsed.data.notes || null,
     })
     .select()

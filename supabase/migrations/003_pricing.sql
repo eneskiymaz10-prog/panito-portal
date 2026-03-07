@@ -3,7 +3,7 @@ CREATE TABLE customer_prices (
   customer_id UUID REFERENCES profiles(id) ON DELETE CASCADE,
   product_id UUID REFERENCES products(id) ON DELETE CASCADE,
   price_per_unit NUMERIC NOT NULL,
-  currency TEXT DEFAULT 'EUR',
+  currency TEXT DEFAULT 'USD',
   valid_from DATE DEFAULT CURRENT_DATE,
   valid_until DATE,
   UNIQUE(customer_id, product_id, valid_from)

@@ -62,7 +62,7 @@ export async function GET(
       invoice_number: invoice.invoice_number,
       created_at: invoice.created_at,
       due_date: invoice.due_date,
-      currency: invoice.currency || "EUR",
+      currency: invoice.currency || "USD",
       subtotal: invoice.subtotal,
       tax_rate: invoice.tax_rate,
       tax_amount: invoice.tax_amount,

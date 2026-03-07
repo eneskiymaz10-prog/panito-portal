@@ -34,7 +34,7 @@ export default function CustomerDetailPage() {
   const [customer, setCustomer] = useState<any>(null);
   const [prices, setPrices] = useState<CustomerPrice[]>([]);
   const [products, setProducts] = useState<Product[]>([]);
-  const [newPrice, setNewPrice] = useState({ product_id: "", price_per_unit: "", currency: "EUR" });
+  const [newPrice, setNewPrice] = useState({ product_id: "", price_per_unit: "", currency: "USD" });
 
   useEffect(() => {
     const supabase = createClient();
@@ -60,7 +60,7 @@ export default function CustomerDetailPage() {
     }).select().single();
     if (error) { toast.error("Failed to add price"); return; }
     setPrices([...prices, data]);
-    setNewPrice({ product_id: "", price_per_unit: "", currency: "EUR" });
+    setNewPrice({ product_id: "", price_per_unit: "", currency: "USD" });
     toast.success("Price added");
   }
 

@@ -87,7 +87,7 @@ export default function NewOrderPage() {
     );
     const lineTotal = price ? calc.totalUnits * price.price_per_unit : 0;
 
-    return { ...calc, lineTotal, currency: price?.currency || "EUR" };
+    return { ...calc, lineTotal, currency: price?.currency || "USD" };
   }
 
   const totalAmount = items.reduce((sum, item) => {
