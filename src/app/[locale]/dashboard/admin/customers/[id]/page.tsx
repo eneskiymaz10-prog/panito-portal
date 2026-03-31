@@ -96,7 +96,7 @@ export default function CustomerDetailPage() {
             <TableHeader>
               <TableRow>
                 <TableHead>Product</TableHead>
-                <TableHead>Price / Unit</TableHead>
+                <TableHead>Price / Display Box</TableHead>
                 <TableHead>Currency</TableHead>
                 <TableHead></TableHead>
               </TableRow>
@@ -133,7 +133,7 @@ export default function CustomerDetailPage() {
               </Select>
             </div>
             <div className="w-32 space-y-1">
-              <Label>Price / Unit</Label>
+              <Label>Price / Display Box</Label>
               <Input type="number" step="0.01" value={newPrice.price_per_unit} onChange={(e) => setNewPrice({...newPrice, price_per_unit: e.target.value})} />
             </div>
             <div className="w-24 space-y-1">

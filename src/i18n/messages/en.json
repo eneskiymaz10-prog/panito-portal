@@ -70,16 +70,16 @@
     "flavour": "Flavour",
     "weight": "Weight",
     "dimensions": "Dimensions",
-    "unitsPerMasterbox": "Units / Masterbox",
+    "unitsPerMasterbox": "Display Boxes / Masterbox",
     "masterboxesPerPalletAir": "Masterboxes / Pallet (Air)",
     "masterboxesPerPalletSea": "Masterboxes / Pallet (Sea/Land)",
-    "unitsPerPallet": "Units / Pallet",
+    "unitsPerPallet": "Display Boxes / Pallet",
     "active": "Active",
     "inactive": "Inactive",
     "productDetails": "Product Details",
     "specifications": "Specifications",
     "pricing": "Pricing",
-    "pricePerUnit": "Price / Unit"
+    "pricePerUnit": "Price / Display Box"
   },
   "orders": {
     "title": "Orders",
@@ -89,7 +89,7 @@
     "items": "Items",
     "masterboxes": "Masterboxes",
     "pallets": "Pallets",
-    "unitPrice": "Unit Price",
+    "unitPrice": "Price / Display Box",
     "lineTotal": "Line Total",
     "addItem": "Add Item",
     "removeItem": "Remove",
@@ -148,7 +148,7 @@
     "productionUse": "Production Use",
     "adjustment": "Adjustment",
     "bom": "Bill of Materials",
-    "quantityPerUnit": "Qty / Unit"
+    "quantityPerUnit": "Qty / Display Box"
   },
   "invoices": {
     "title": "Invoices",

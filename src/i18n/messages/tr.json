@@ -70,16 +70,16 @@
     "flavour": "Lezzet",
     "weight": "Ağırlık",
     "dimensions": "Boyutlar",
-    "unitsPerMasterbox": "Adet / Koli",
+    "unitsPerMasterbox": "Teşhir Kutusu / Koli",
     "masterboxesPerPalletAir": "Koli / Palet (Hava)",
     "masterboxesPerPalletSea": "Koli / Palet (Deniz/Kara)",
-    "unitsPerPallet": "Adet / Palet",
+    "unitsPerPallet": "Teşhir Kutusu / Palet",
     "active": "Aktif",
     "inactive": "Pasif",
     "productDetails": "Ürün Detayları",
     "specifications": "Özellikler",
     "pricing": "Fiyatlandırma",
-    "pricePerUnit": "Birim Fiyat"
+    "pricePerUnit": "Fiyat / Teşhir Kutusu"
   },
   "orders": {
     "title": "Siparişler",
@@ -89,7 +89,7 @@
     "items": "Kalemler",
     "masterboxes": "Koliler",
     "pallets": "Paletler",
-    "unitPrice": "Birim Fiyat",
+    "unitPrice": "Fiyat / Teşhir Kutusu",
     "lineTotal": "Satır Toplamı",
     "addItem": "Kalem Ekle",
     "removeItem": "Kaldır",
@@ -148,7 +148,7 @@
     "productionUse": "Üretim Kullanımı",
     "adjustment": "Düzeltme",
     "bom": "Ürün Reçetesi",
-    "quantityPerUnit": "Miktar / Adet"
+    "quantityPerUnit": "Miktar / Teşhir Kutusu"
   },
   "invoices": {
     "title": "Faturalar",

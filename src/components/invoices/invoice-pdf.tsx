@@ -376,7 +376,7 @@ export const InvoicePdfDocument: React.FC<{ data: InvoiceData }> = ({
               Qty (Masterboxes)
             </Text>
             <Text style={[styles.tableHeaderText, styles.colUnitPrice]}>
-              Unit Price
+              Price / Display Box
             </Text>
             <Text style={[styles.tableHeaderText, styles.colLineTotal]}>
               Line Total

@@ -77,7 +77,7 @@ export default async function CatalogPage() {
                     <span className="text-lg font-bold text-primary">
                       {formatCurrency(price.price_per_unit, price.currency)}
                     </span>
-                    <span className="text-sm text-muted-foreground"> / unit</span>
+                    <span className="text-sm text-muted-foreground"> / display box</span>
                   </div>
                 )}
                 {!price && (

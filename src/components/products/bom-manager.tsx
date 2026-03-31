@@ -101,7 +101,7 @@ export function BomManager({ productId }: { productId: string }) {
               <TableHeader>
                 <TableRow>
                   <TableHead>Raw Material</TableHead>
-                  <TableHead>Qty / Unit</TableHead>
+                  <TableHead>Qty / Display Box</TableHead>
                   <TableHead>Unit</TableHead>
                   <TableHead></TableHead>
                 </TableRow>
@@ -154,7 +154,7 @@ export function BomManager({ productId }: { productId: string }) {
                   </Select>
                 </div>
                 <div className="w-36 space-y-1">
-                  <Label>Qty per unit</Label>
+                  <Label>Qty per display box</Label>
                   <Input
                     type="number"
                     step="0.001"
