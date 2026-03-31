@@ -55,7 +55,8 @@ export interface Database {
           weight_per_unit_grams: number;
           dimensions_cm: string | null;
           units_per_masterbox: number;
-          masterboxes_per_pallet: number;
+          masterboxes_per_pallet_air: number;
+          masterboxes_per_pallet_sea: number;
           image_url: string | null;
           is_active: boolean;
           created_at: string;
@@ -70,7 +71,8 @@ export interface Database {
           weight_per_unit_grams: number;
           dimensions_cm?: string | null;
           units_per_masterbox: number;
-          masterboxes_per_pallet: number;
+          masterboxes_per_pallet_air: number;
+          masterboxes_per_pallet_sea: number;
           image_url?: string | null;
           is_active?: boolean;
         };
@@ -122,6 +124,7 @@ export interface Database {
           status: OrderStatus;
           total_amount: number | null;
           currency: string;
+          shipment_method: string;
           notes: string | null;
           created_at: string;
           updated_at: string;
@@ -133,6 +136,7 @@ export interface Database {
           status?: OrderStatus;
           total_amount?: number | null;
           currency?: string;
+          shipment_method?: string;
           notes?: string | null;
         };
         Update: Partial<Database["public"]["Tables"]["orders"]["Insert"]>;

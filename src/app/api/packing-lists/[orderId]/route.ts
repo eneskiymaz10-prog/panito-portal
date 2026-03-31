@@ -41,13 +41,15 @@ export async function GET(
       contact_phone: string | null;
     };
 
+    const shipmentMethod = (order as any).shipment_method || "sea";
     const items: PackingListItem[] = (
       order.order_items as Array<{
         quantity_masterboxes: number;
         products: {
           name: string;
           sku: string;
-          masterboxes_per_pallet: number;
+          masterboxes_per_pallet_air: number;
+          masterboxes_per_pallet_sea: number;
           units_per_masterbox: number;
           weight_per_unit_grams: number;
         };
@@ -56,7 +58,9 @@ export async function GET(
       productName: item.products.name,
       sku: item.products.sku,
       quantityMasterboxes: item.quantity_masterboxes,
-      masterboxesPerPallet: item.products.masterboxes_per_pallet,
+      masterboxesPerPallet: shipmentMethod === "air"
+        ? item.products.masterboxes_per_pallet_air
+        : item.products.masterboxes_per_pallet_sea,
       unitsPerMasterbox: item.products.units_per_masterbox,
       weightPerUnitGrams: item.products.weight_per_unit_grams,
     }));

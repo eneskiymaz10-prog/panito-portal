@@ -7,6 +7,7 @@ export const orderItemSchema = z.object({
 
 export const createOrderSchema = z.object({
   items: z.array(orderItemSchema).min(1, "At least one item is required"),
+  shipment_method: z.enum(["air", "sea"]).default("sea"),
   notes: z.string().optional(),
 });
 

@@ -39,7 +39,8 @@ export default async function ProductsPage() {
                 <TableHead>{t("flavour")}</TableHead>
                 <TableHead>{t("weight")}</TableHead>
                 <TableHead>{t("unitsPerMasterbox")}</TableHead>
-                <TableHead>{t("masterboxesPerPallet")}</TableHead>
+                <TableHead>{t("masterboxesPerPalletAir")}</TableHead>
+                <TableHead>{t("masterboxesPerPalletSea")}</TableHead>
                 <TableHead>Status</TableHead>
               </TableRow>
             </TableHeader>
@@ -55,7 +56,8 @@ export default async function ProductsPage() {
                   <TableCell>{product.flavour || "-"}</TableCell>
                   <TableCell>{formatWeight(product.weight_per_unit_grams)}</TableCell>
                   <TableCell>{product.units_per_masterbox}</TableCell>
-                  <TableCell>{product.masterboxes_per_pallet}</TableCell>
+                  <TableCell>{product.masterboxes_per_pallet_air}</TableCell>
+                  <TableCell>{product.masterboxes_per_pallet_sea}</TableCell>
                   <TableCell>
                     <Badge variant={product.is_active ? "default" : "secondary"}>
                       {product.is_active ? t("active") : t("inactive")}
@@ -65,7 +67,7 @@ export default async function ProductsPage() {
               ))}
               {(!products || products.length === 0) && (
                 <TableRow>
-                  <TableCell colSpan={7} className="text-center text-muted-foreground py-8">
+                  <TableCell colSpan={8} className="text-center text-muted-foreground py-8">
                     No products yet. Add your first product.
                   </TableCell>
                 </TableRow>

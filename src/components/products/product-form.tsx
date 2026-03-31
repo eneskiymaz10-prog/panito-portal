@@ -101,7 +101,7 @@ export function ProductForm({ defaultValues, productId }: ProductFormProps) {
           <CardTitle>{t("specifications")}</CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
-          <div className="grid gap-4 md:grid-cols-3">
+          <div className="grid gap-4 md:grid-cols-2">
             <div className="space-y-2">
               <Label htmlFor="weight_per_unit_grams">{t("weight")} (g)</Label>
               <Input id="weight_per_unit_grams" type="number" {...register("weight_per_unit_grams")} />
@@ -112,10 +112,17 @@ export function ProductForm({ defaultValues, productId }: ProductFormProps) {
               <Input id="units_per_masterbox" type="number" {...register("units_per_masterbox")} />
               {errors.units_per_masterbox && <p className="text-sm text-destructive">{errors.units_per_masterbox.message}</p>}
             </div>
+          </div>
+          <div className="grid gap-4 md:grid-cols-2">
             <div className="space-y-2">
-              <Label htmlFor="masterboxes_per_pallet">{t("masterboxesPerPallet")}</Label>
-              <Input id="masterboxes_per_pallet" type="number" {...register("masterboxes_per_pallet")} />
-              {errors.masterboxes_per_pallet && <p className="text-sm text-destructive">{errors.masterboxes_per_pallet.message}</p>}
+              <Label htmlFor="masterboxes_per_pallet_air">{t("masterboxesPerPalletAir")}</Label>
+              <Input id="masterboxes_per_pallet_air" type="number" {...register("masterboxes_per_pallet_air")} />
+              {errors.masterboxes_per_pallet_air && <p className="text-sm text-destructive">{errors.masterboxes_per_pallet_air.message}</p>}
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="masterboxes_per_pallet_sea">{t("masterboxesPerPalletSea")}</Label>
+              <Input id="masterboxes_per_pallet_sea" type="number" {...register("masterboxes_per_pallet_sea")} />
+              {errors.masterboxes_per_pallet_sea && <p className="text-sm text-destructive">{errors.masterboxes_per_pallet_sea.message}</p>}
             </div>
           </div>
           <div className="flex items-center gap-3">

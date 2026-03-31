@@ -64,14 +64,12 @@ export default async function CatalogPage() {
                     <span className="font-medium">{product.units_per_masterbox}</span>
                   </div>
                   <div>
-                    <span className="text-muted-foreground">{t("masterboxesPerPallet")}:</span>{" "}
-                    <span className="font-medium">{product.masterboxes_per_pallet}</span>
+                    <span className="text-muted-foreground">{t("masterboxesPerPalletAir")}:</span>{" "}
+                    <span className="font-medium">{product.masterboxes_per_pallet_air}</span>
                   </div>
                   <div>
-                    <span className="text-muted-foreground">{t("unitsPerPallet")}:</span>{" "}
-                    <span className="font-medium">
-                      {product.units_per_masterbox * product.masterboxes_per_pallet}
-                    </span>
+                    <span className="text-muted-foreground">{t("masterboxesPerPalletSea")}:</span>{" "}
+                    <span className="font-medium">{product.masterboxes_per_pallet_sea}</span>
                   </div>
                 </div>
                 {price && (

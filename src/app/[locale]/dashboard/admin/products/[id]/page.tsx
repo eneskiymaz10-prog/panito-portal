@@ -34,7 +34,8 @@ export default async function EditProductPage({
           weight_per_unit_grams: product.weight_per_unit_grams,
           dimensions_cm: product.dimensions_cm || undefined,
           units_per_masterbox: product.units_per_masterbox,
-          masterboxes_per_pallet: product.masterboxes_per_pallet,
+          masterboxes_per_pallet_air: product.masterboxes_per_pallet_air,
+          masterboxes_per_pallet_sea: product.masterboxes_per_pallet_sea,
           is_active: product.is_active,
         }}
       />

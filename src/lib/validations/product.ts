@@ -8,7 +8,8 @@ export const productSchema = z.object({
   weight_per_unit_grams: z.coerce.number().positive("Weight must be positive"),
   dimensions_cm: z.string().optional(),
   units_per_masterbox: z.coerce.number().int().positive("Units per masterbox must be positive"),
-  masterboxes_per_pallet: z.coerce.number().int().positive("Masterboxes per pallet must be positive"),
+  masterboxes_per_pallet_air: z.coerce.number().int().positive("Masterboxes per pallet (air) must be positive"),
+  masterboxes_per_pallet_sea: z.coerce.number().int().positive("Masterboxes per pallet (sea/land) must be positive"),
   is_active: z.boolean().default(true),
 });
 

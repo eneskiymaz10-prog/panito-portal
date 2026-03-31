@@ -21,7 +21,8 @@ interface Product {
   sku: string;
   flavour: string | null;
   units_per_masterbox: number;
-  masterboxes_per_pallet: number;
+  masterboxes_per_pallet_air: number;
+  masterboxes_per_pallet_sea: number;
   weight_per_unit_grams: number;
 }
 
@@ -44,6 +45,7 @@ export default function NewOrderPage() {
   const [prices, setPrices] = useState<Price[]>([]);
   const [items, setItems] = useState<OrderItem[]>([{ product_id: "", quantity_masterboxes: 1 }]);
   const [notes, setNotes] = useState("");
+  const [shipmentMethod, setShipmentMethod] = useState<"air" | "sea">("sea");
   const [submitting, setSubmitting] = useState(false);
 
   useEffect(() => {
@@ -80,9 +82,12 @@ export default function NewOrderPage() {
     const price = priceMap.get(item.product_id);
     if (!product || !item.quantity_masterboxes) return null;
 
+    const masterboxesPerPallet = shipmentMethod === "air"
+      ? product.masterboxes_per_pallet_air
+      : product.masterboxes_per_pallet_sea;
     const calc = calculateFromMasterboxes(
       item.quantity_masterboxes,
-      product.masterboxes_per_pallet,
+      masterboxesPerPallet,
       product.units_per_masterbox
     );
     const lineTotal = price ? calc.totalUnits * price.price_per_unit : 0;
@@ -106,7 +111,7 @@ export default function NewOrderPage() {
     const res = await fetch("/api/orders", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ items: validItems, notes: notes || undefined }),
+      body: JSON.stringify({ items: validItems, notes: notes || undefined, shipment_method: shipmentMethod }),
     });
 
     if (!res.ok) {
@@ -123,6 +128,23 @@ export default function NewOrderPage() {
   return (
     <div className="space-y-6">
       <h1 className="text-2xl font-bold">{t("newOrder")}</h1>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>{t("shipmentMethod")}</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <Select value={shipmentMethod} onValueChange={(v) => setShipmentMethod(v as "air" | "sea")}>
+            <SelectTrigger className="w-64">
+              <SelectValue />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="air">{t("airShipment")}</SelectItem>
+              <SelectItem value="sea">{t("seaLandFreight")}</SelectItem>
+            </SelectContent>
+          </Select>
+        </CardContent>
+      </Card>
 
       <Card>
         <CardHeader>

@@ -55,9 +55,12 @@ export default async function AdminOrderDetailPage({ params }: { params: Promise
             </TableHeader>
             <TableBody>
               {(order as any).order_items?.map((item: any) => {
+                const mbPerPallet = item.products
+                  ? ((order as any).shipment_method === "air" ? item.products.masterboxes_per_pallet_air : item.products.masterboxes_per_pallet_sea)
+                  : 1;
                 const calc = item.products ? calculateFromMasterboxes(
                   item.quantity_masterboxes,
-                  item.products.masterboxes_per_pallet,
+                  mbPerPallet,
                   item.products.units_per_masterbox
                 ) : null;
                 return (

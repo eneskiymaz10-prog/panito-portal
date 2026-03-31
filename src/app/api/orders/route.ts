@@ -77,6 +77,7 @@ export async function POST(request: Request) {
       status: "submitted",
       total_amount: totalAmount,
       currency: prices?.[0]?.currency || "USD",
+      shipment_method: parsed.data.shipment_method || "sea",
       notes: parsed.data.notes || null,
     })
     .select()
