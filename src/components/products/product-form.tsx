@@ -136,6 +136,21 @@ export function ProductForm({ defaultValues, productId }: ProductFormProps) {
         </CardContent>
       </Card>
 
+      <Card>
+        <CardHeader>
+          <CardTitle>{t("pricing")}</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="grid gap-4 md:grid-cols-2">
+            <div className="space-y-2">
+              <Label htmlFor="price_per_unit">{t("pricePerUnit")} (USD)</Label>
+              <Input id="price_per_unit" type="number" step="0.01" min="0" {...register("price_per_unit")} />
+              {errors.price_per_unit && <p className="text-sm text-destructive">{errors.price_per_unit.message}</p>}
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
       <div className="flex gap-3">
         <Button type="submit" disabled={isSubmitting}>
           {isSubmitting ? "..." : tc("save")}

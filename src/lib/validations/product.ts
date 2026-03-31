@@ -10,6 +10,7 @@ export const productSchema = z.object({
   units_per_masterbox: z.coerce.number().int().positive("Units per masterbox must be positive"),
   masterboxes_per_pallet_air: z.coerce.number().int().positive("Masterboxes per pallet (air) must be positive"),
   masterboxes_per_pallet_sea: z.coerce.number().int().positive("Masterboxes per pallet (sea/land) must be positive"),
+  price_per_unit: z.coerce.number().min(0, "Price must be 0 or more").default(0),
   is_active: z.boolean().default(true),
 });
 

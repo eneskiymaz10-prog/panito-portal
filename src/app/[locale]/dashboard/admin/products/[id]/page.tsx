@@ -36,6 +36,7 @@ export default async function EditProductPage({
           units_per_masterbox: product.units_per_masterbox,
           masterboxes_per_pallet_air: product.masterboxes_per_pallet_air,
           masterboxes_per_pallet_sea: product.masterboxes_per_pallet_sea,
+          price_per_unit: product.price_per_unit,
           is_active: product.is_active,
         }}
       />

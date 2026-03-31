@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import Link from "next/link";
 import { Plus } from "lucide-react";
-import { formatWeight } from "@/lib/utils/format";
+import { formatWeight, formatCurrency } from "@/lib/utils/format";
 
 export default async function ProductsPage() {
   const t = await getTranslations("products");
@@ -41,6 +41,7 @@ export default async function ProductsPage() {
                 <TableHead>{t("unitsPerMasterbox")}</TableHead>
                 <TableHead>{t("masterboxesPerPalletAir")}</TableHead>
                 <TableHead>{t("masterboxesPerPalletSea")}</TableHead>
+                <TableHead>{t("pricePerUnit")}</TableHead>
                 <TableHead>Status</TableHead>
               </TableRow>
             </TableHeader>
@@ -58,6 +59,7 @@ export default async function ProductsPage() {
                   <TableCell>{product.units_per_masterbox}</TableCell>
                   <TableCell>{product.masterboxes_per_pallet_air}</TableCell>
                   <TableCell>{product.masterboxes_per_pallet_sea}</TableCell>
+                  <TableCell>{formatCurrency(product.price_per_unit)}</TableCell>
                   <TableCell>
                     <Badge variant={product.is_active ? "default" : "secondary"}>
                       {product.is_active ? t("active") : t("inactive")}
@@ -67,7 +69,7 @@ export default async function ProductsPage() {
               ))}
               {(!products || products.length === 0) && (
                 <TableRow>
-                  <TableCell colSpan={8} className="text-center text-muted-foreground py-8">
+                  <TableCell colSpan={9} className="text-center text-muted-foreground py-8">
                     No products yet. Add your first product.
                   </TableCell>
                 </TableRow>

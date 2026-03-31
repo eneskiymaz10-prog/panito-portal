@@ -57,6 +57,7 @@ export interface Database {
           units_per_masterbox: number;
           masterboxes_per_pallet_air: number;
           masterboxes_per_pallet_sea: number;
+          price_per_unit: number;
           image_url: string | null;
           is_active: boolean;
           created_at: string;
@@ -73,6 +74,7 @@ export interface Database {
           units_per_masterbox: number;
           masterboxes_per_pallet_air: number;
           masterboxes_per_pallet_sea: number;
+          price_per_unit?: number;
           image_url?: string | null;
           is_active?: boolean;
         };
